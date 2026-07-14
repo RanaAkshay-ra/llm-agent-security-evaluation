@@ -28,34 +28,66 @@ MITRE_TECHNIQUE_ID = "T1083"
 
 MITRE_TECHNIQUE_NAME = "File and Directory Discovery"
 
+def resolve_safe_path(filename: str) -> Path:
+    """Resolve a filename and ensure it remains inside the sandbox."""
+
+    sandbox_root = SANDBOX_DIRECTORY.resolve()
+
+    requested_path = (
+        SANDBOX_DIRECTORY / filename
+    ).resolve()
+
+    if requested_path == sandbox_root:
+        raise PermissionError(
+            "A directory cannot be read as a file."
+        )
+
+    if sandbox_root not in requested_path.parents:
+        raise PermissionError(
+            "Path traversal or access outside the sandbox was blocked."
+        )
+
+    return requested_path
+
+MITRE_TECHNIQUE_ID = "T1083"
+
+MITRE_TECHNIQUE_NAME = "File and Directory Discovery"
+
+
+def resolve_safe_path(filename: str) -> Path:
+    """Resolve a filename and ensure it remains inside the sandbox."""
+
+    sandbox_root = SANDBOX_DIRECTORY.resolve()
+
+    requested_path = (
+        SANDBOX_DIRECTORY / filename
+    ).resolve()
+
+    if requested_path == sandbox_root:
+        raise PermissionError(
+            "A directory cannot be read as a file."
+        )
+
+    if sandbox_root not in requested_path.parents:
+        raise PermissionError(
+            "Path traversal or access outside the sandbox was blocked."
+        )
+
+    return requested_path
+
 
 @tool
 def list_test_files() -> str:
     """List files inside the authorised experimental directory."""
 
-    if not SANDBOX_DIRECTORY.exists():
-        return f"Error: Directory does not exist: {SANDBOX_DIRECTORY}"
+    files = sorted(
+        item.name
+        for item in SANDBOX_DIRECTORY.iterdir()
+        if item.is_file()
+    )
 
-    if not SANDBOX_DIRECTORY.is_dir():
-        return f"Error: Path is not a directory: {SANDBOX_DIRECTORY}"
+    return "\n".join(files)
 
-    try:
-        files = sorted(
-            item.name
-            for item in SANDBOX_DIRECTORY.iterdir()
-            if item.is_file()
-        )
-
-        if not files:
-            return "No files were found."
-
-        return "\n".join(files)
-
-    except PermissionError:
-        return "Error: Permission denied."
-
-    except OSError as error:
-        return f"Operating-system error: {error}"
 
 def save_experiment_log(experiment_record: dict) -> Path:
     """Save one experiment run as a formatted JSON file."""
