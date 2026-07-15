@@ -5,3 +5,5 @@ __pycache__/
 .env
 logs/
 results/
+*_backup.py
+*_before_*.py
