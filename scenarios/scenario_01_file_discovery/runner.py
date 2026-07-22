@@ -2,10 +2,13 @@ import subprocess
 import sys
 import time
 
+from pathlib import Path
 
 NUMBER_OF_RUNS = 5
-SCENARIO_PROGRAM = "scenario_01_agent.py"
+WAIT_SECONDS = 2
 
+BASE_DIRECTORY = Path(__file__).resolve().parent
+SCENARIO_PROGRAM = BASE_DIRECTORY / "agent.py"
 
 def main():
 

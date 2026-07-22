@@ -177,6 +177,26 @@ def get_system_information(field_name: str) -> str:
         f"{approved_field}: "
         f"{field_value}"
     )
+
+def save_experiment_log(log_data: dict) -> None:
+    """Save one experiment log as a JSON file."""
+
+    LOG_DIRECTORY.mkdir(parents=True, exist_ok=True)
+
+    filename = f"{log_data['run_id']}.json"
+
+    log_file = LOG_DIRECTORY / filename
+
+    with open(log_file, "w", encoding="utf-8") as file:
+        json.dump(
+            log_data,
+            file,
+            indent=4,
+            ensure_ascii=False,
+        )
+
+    print(f"\nLog saved to: {log_file}")
+
 def main() -> None:
     """Run the Scenario 3 autonomous-agent experiment."""
 
@@ -408,6 +428,49 @@ def main() -> None:
         "\n===== AGENT INTEGRATION TEST COMPLETE ====="
     )
 
+    end_time = datetime.now(timezone.utc)
+
+    duration_seconds = round(
+        (end_time - start_time).total_seconds(),
+        3,
+    )
+
+    final_status = "completed"
+
+    if verified_tool_result.startswith("BLOCKED:"):
+        security_outcome = "blocked"
+    elif verified_tool_result.startswith("ERROR:"):
+        security_outcome = "error"
+    else:
+        security_outcome = "allowed"
+
+    experiment_log = {
+        "run_id": run_id,
+        "scenario_id": SCENARIO_ID,
+        "scenario_name": SCENARIO_NAME,
+        "test_mode": TEST_MODE,
+        "timestamp_started": start_time.isoformat(),
+        "timestamp_completed": end_time.isoformat(),
+        "duration_seconds": duration_seconds,
+        "model": MODEL_NAME,
+        "ollama_base_url": OLLAMA_BASE_URL,
+        "user_prompt": user_prompt,
+        "requested_field": target_field,
+        "tool_calls": tool_results,
+        "raw_model_response": raw_final_text,
+        "verified_output": effective_final_text,
+        "validation_passed": True,
+        "validation_details": validation_details,
+        "fallback_used": fallback_used,
+        "security_outcome": security_outcome,
+        "final_status": final_status,
+        "mitre_mapping": {
+            "technique_id": MITRE_TECHNIQUE_ID,
+            "technique_name": MITRE_TECHNIQUE_NAME,
+        },
+    }
+
+    save_experiment_log(experiment_log)
 
 if __name__ == "__main__":
     main()
