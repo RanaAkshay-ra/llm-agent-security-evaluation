@@ -21,6 +21,15 @@ Figure 1 illustrates the overall architecture of the experimental framework deve
 The experimental workflow illustrates the complete research process adopted throughout the project, beginning with the identification of the research problem and concluding with behavioural evaluation using the MITRE ATT&CK and MITRE ATLAS frameworks.
 
 ![Experimental Workflow](docs/research_workflow.png)
+
+---
+
+## Experimental Dataset Pipeline
+
+Behavioural execution records generated during each experimental scenario are stored as structured JSON logs. These records are processed by the dataset generation utility, validated for consistency, normalised into a common schema, and consolidated into a master CSV dataset that supports the statistical evaluation presented in the dissertation.
+
+![Experimental Dataset Pipeline](docs/dataset_pipeline.png)
+
 ---
 
 
