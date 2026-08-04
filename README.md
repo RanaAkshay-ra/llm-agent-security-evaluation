@@ -16,6 +16,14 @@ Figure 1 illustrates the overall architecture of the experimental framework deve
 
 ---
 
+## Experimental Workflow
+
+The experimental workflow illustrates the complete research process adopted throughout the project, beginning with the identification of the research problem and concluding with behavioural evaluation using the MITRE ATT&CK and MITRE ATLAS frameworks.
+
+![Experimental Workflow](docs/research_workflow.png)
+---
+
+
 ## Research Objectives
 
 The project aims to:
