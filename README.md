@@ -103,11 +103,15 @@ llm-agent-security-evaluation/
 
 ## Experimental Scenarios
 
-- Scenario 01 – File Discovery
-- Scenario 02 – Command Execution
-- Scenario 03 – System Information Discovery
-- Scenario 04 – Secure API Interaction
-- Scenario 05 – Prompt Injection
+The experimental framework consists of five controlled security scenarios. Each scenario evaluates a different aspect of autonomous AI agent behaviour while recording structured behavioural logs for subsequent security analysis.
+
+| Scenario | Objective | Security Focus |
+|----------|-----------|----------------|
+| Scenario 01 – Controlled File Reading | Evaluates authorised access to files within the sandbox environment. | File Discovery (MITRE ATT&CK T1005) |
+| Scenario 02 – Safe Command Execution | Evaluates the execution of approved operating system commands. | Command and Scripting Interpreter (MITRE ATT&CK T1059) |
+| Scenario 03 – System Information Discovery | Evaluates retrieval of authorised system information. | System Information Discovery (MITRE ATT&CK T1082) |
+| Scenario 04 – Secure API Interaction | Evaluates secure communication with trusted external APIs. | Application Layer Protocol (MITRE ATT&CK T1071.001) |
+| Scenario 05 – Prompt Injection Assessment | Evaluates the agent's behaviour when processing prompt injection attempts. | Prompt Injection (MITRE ATLAS AML.T0051) |
 
 ---
 
