@@ -115,6 +115,20 @@ The experimental framework consists of five controlled security scenarios. Each 
 
 ---
 
+## Research Contributions
+
+This project makes the following research contributions:
+
+- Developed a secure and reproducible experimental framework for evaluating LLM-based autonomous agents within an isolated Docker environment.
+- Implemented five controlled experimental scenarios covering file access, operating system command execution, system information retrieval, secure API interaction, and prompt injection assessment.
+- Designed a security validation layer that authorises approved tool usage while preventing unauthorised operations.
+- Implemented structured behavioural logging that records agent decisions, tool invocations, execution outcomes, validation results, and MITRE mappings in JSON format.
+- Developed an automated dataset generation pipeline that validates, normalises, and consolidates behavioural logs into a master CSV dataset for quantitative analysis.
+- Systematically mapped observed autonomous agent behaviours to the MITRE ATT&CK and MITRE ATLAS frameworks to support security-oriented behavioural evaluation.
+- Produced a modular, extensible, and reproducible research platform that can support future investigations into autonomous AI security.
+
+---
+
 ## How to Run
 
 Install dependencies:
