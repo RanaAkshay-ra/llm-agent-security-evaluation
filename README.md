@@ -41,18 +41,36 @@ The project aims to:
 ```text
 llm-agent-security-evaluation/
 │
-├── agents/
-├── archive/
-├── docs/
-├── scenarios/
+├── agents/                         # Autonomous agent implementation
+├── archive/                        # Archived development files
+│   ├── old_scenarios/
+│   └── requirement.txt
 │
-├── analyse_dataset.py
-├── experiment_runner.py
-├── main.py
-├── master_dataset.py
-├── requirements.txt
-├── README.md
-└── .gitignore
+├── docs/                           # Project documentation
+│
+├── logs/                           # Behavioural execution logs
+│   ├── analysis_dataset/
+│   ├── final_dataset/
+│   └── raw/
+│
+├── results/                        # Experimental results
+│   ├── analysis/
+│   └── datasets/
+│
+├── scenarios/                      # Experimental scenarios
+│   ├── scenario_01_file_discovery/
+│   ├── scenario_02_command_execution/
+│   ├── scenario_03_system_information/
+│   ├── scenario_04_secure_api_interaction/
+│   └── scenario_05_prompt_injection/
+│
+├── analyse_dataset.py              # Statistical analysis script
+├── experiment_runner.py            # Executes all experimental scenarios
+├── main.py                         # Main entry point
+├── master_dataset.py               # Dataset generation script
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation
+└── .gitignore                      # Git ignore rules
 ```
 
 ---
