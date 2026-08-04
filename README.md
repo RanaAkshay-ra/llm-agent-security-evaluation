@@ -48,14 +48,17 @@ The project aims to:
 
 ## Technologies Used
 
-- Python
-- LangChain
-- Ollama
-- Docker
-- Ubuntu Linux
-- JSON
-- MITRE ATT&CK
-- MITRE ATLAS
+| Technology | Purpose |
+|---|---|
+| Python | Implements the experimental framework, validation logic, logging, and dataset processing |
+| LangChain | Orchestrates prompts, tool selection, and autonomous agent workflows |
+| Ollama | Hosts the Llama 3.2 language model within the local research environment |
+| Docker | Provides an isolated and reproducible sandbox for controlled execution |
+| Ubuntu Linux | Serves as the operating system within the experimental container |
+| JSON | Stores structured behavioural execution logs |
+| CSV | Consolidates experimental records into the master dataset |
+| MITRE ATT&CK | Classifies observable security-relevant agent behaviours |
+| MITRE ATLAS | Maps AI-specific threats, particularly prompt injection |
 
 ---
 
