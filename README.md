@@ -38,15 +38,21 @@ The project aims to:
 
 ## Repository Structure
 
-```
-agents/
-docs/
-scenarios/
-analyse_dataset.py
-experiment_runner.py
-main.py
-master_dataset.py
-requirements.txt
+```text
+llm-agent-security-evaluation/
+│
+├── agents/
+├── archive/
+├── docs/
+├── scenarios/
+│
+├── analyse_dataset.py
+├── experiment_runner.py
+├── main.py
+├── master_dataset.py
+├── requirements.txt
+├── README.md
+└── .gitignore
 ```
 
 ---
