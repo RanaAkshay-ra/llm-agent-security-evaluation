@@ -129,6 +129,14 @@ This project makes the following research contributions:
 
 ---
 
+## Example Execution
+
+The figure below demonstrates the successful execution of the experimental framework. All five controlled security scenarios completed successfully, generating validated behavioural logs that were consolidated into the master experimental dataset for quantitative analysis.
+
+![Experiment Execution](docs/experiment_runner.png)
+
+---
+
 ## How to Run
 
 Install dependencies:
