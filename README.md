@@ -8,6 +8,12 @@ This repository contains the source code developed for the MSc Cyber Security di
 
 The project presents a secure experimental framework for evaluating the behaviour of Large Language Model (LLM)-based autonomous agents operating within a controlled Docker sandbox.
 
+## System Architecture
+
+Figure 1 illustrates the overall architecture of the experimental framework developed for this research. The framework integrates a locally deployed Llama 3.2 model, LangChain-based orchestration, a security validation layer, controlled execution tools, output verification, structured behavioural logging, and an isolated Docker-based Ubuntu environment. Collectively, these components provide a secure, modular, and reproducible platform for evaluating the security-related behaviour of autonomous AI agents.
+
+![Autonomous Agent Architecture](docs/system_architecture.png)
+
 ---
 
 ## Research Objectives
