@@ -24,7 +24,11 @@ The project presents a secure experimental framework for evaluating the behaviou
 
 Figure 1 illustrates the overall architecture of the experimental framework developed for this research. The framework integrates a locally deployed Llama 3.2 model, LangChain-based orchestration, a security validation layer, controlled execution tools, output verification, structured behavioural logging, and an isolated Docker-based Ubuntu environment. Collectively, these components provide a secure, modular, and reproducible platform for evaluating the security-related behaviour of autonomous AI agents.
 
-![Autonomous Agent Architecture](docs/system_architecture.png)
+<p align="center">
+  <a href="docs/system_architecture.png">
+    <img src="docs/system_architecture.png" width="600">
+  </a>
+</p>
 
 ---
 
@@ -32,7 +36,11 @@ Figure 1 illustrates the overall architecture of the experimental framework deve
 
 The experimental workflow illustrates the complete research process adopted throughout the project, beginning with the identification of the research problem and concluding with behavioural evaluation using the MITRE ATT&CK and MITRE ATLAS frameworks.
 
-![Experimental Workflow](docs/research_workflow.png)
+<p align="center">
+  <a href="docs/research_workflow.png">
+    <img src="docs/research_workflow.png" width="350">
+  </a>
+</p>
 
 ---
 
@@ -40,7 +48,11 @@ The experimental workflow illustrates the complete research process adopted thro
 
 Behavioural execution records generated during each experimental scenario are stored as structured JSON logs. These records are processed by the dataset generation utility, validated for consistency, normalised into a common schema, and consolidated into a master CSV dataset that supports the statistical evaluation presented in the dissertation.
 
-![Experimental Dataset Pipeline](docs/dataset_pipeline.png)
+<p align="center">
+  <a href="docs/dataset_pipeline.png">
+    <img src="docs/dataset_pipeline.png" width="350">
+  </a>
+</p>
 
 ---
 
