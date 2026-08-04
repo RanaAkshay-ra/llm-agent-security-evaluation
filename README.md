@@ -1,5 +1,17 @@
 # Security Evaluation of LLM-Based Autonomous Agents
 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+
+![LangChain](https://img.shields.io/badge/LangChain-Agent_Framework-green)
+
+![Docker](https://img.shields.io/badge/Docker-Isolated_Sandbox-blue)
+
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red)
+
+![MITRE ATLAS](https://img.shields.io/badge/MITRE-ATLAS-orange)
+
+![License](https://img.shields.io/badge/License-Academic-lightgrey)
+
 ## Overview
 
 This repository contains the source code developed for the MSc Cyber Security dissertation titled:
@@ -126,6 +138,23 @@ This project makes the following research contributions:
 - Developed an automated dataset generation pipeline that validates, normalises, and consolidates behavioural logs into a master CSV dataset for quantitative analysis.
 - Systematically mapped observed autonomous agent behaviours to the MITRE ATT&CK and MITRE ATLAS frameworks to support security-oriented behavioural evaluation.
 - Produced a modular, extensible, and reproducible research platform that can support future investigations into autonomous AI security.
+
+---
+
+## Project Statistics
+
+| Metric | Value |
+|---------|------:|
+| Experimental Scenarios | 5 |
+| Total Experimental Runs | 62 |
+| Behavioural Log Format | JSON |
+| Master Dataset Format | CSV |
+| Primary Programming Language | Python |
+| Agent Framework | LangChain |
+| Local LLM Runtime | Ollama |
+| Sandbox Environment | Docker (Ubuntu Linux) |
+| Behaviour Mapping Framework | MITRE ATT&CK |
+| AI Threat Framework | MITRE ATLAS |
 
 ---
 
